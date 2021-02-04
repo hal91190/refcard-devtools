@@ -1,0 +1,43 @@
+= Vers la livraison continue
+// https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue
+// https://fr.wikipedia.org/wiki/D%C3%A9ploiement_continu
+// https://fr.wikipedia.org/wiki/Livraison_continue
+
+== Intégration continue (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Continuous_integration"])
+https://about.gitlab.com/features/gitlab-ci-cd/[GitLab-CI] {tstok},
+http://jenkins-ci.org/[Jenkins] {tst},
+https://drone.io/[drone.io],
+https://travis-ci.org/[Travis CI],
+http://cruisecontrol.sourceforge.net/[CruiseControl],
+
+== Gestion des binaires (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Binary_repository_manager"])
+.Outils de documentation par langage
+[%header]
+|===
+| Java | Python
+
+| https://archiva.apache.org/[Archiva],
+http://www.sonatype.org/nexus/[Nexus],
+https://www.jfrog.com/artifactory/[Artifactory],
+| https://pip.pypa.io/en/stable/[pip],
+https://pypi.python.org/pypihttps://pypi.python.org/pypi[PyPI]
+
+|===
+
+== Déploiement (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Software_deployment"])
+.Infrastructure as code
+https://www.ansible.com/[Ansible] {tst}/Ansible Tower,
+https://puppet.com/[Puppet]/ https://theforeman.org/[Foreman],
+https://www.chef.io/[Chef],
+
+.Machine virtuelle
+https://www.virtualbox.org/[Virtualbox] {tstok},
+https://en.wikipedia.org/wiki/QEMU[QEMU],
+
+https://www.packer.io/[Packer] {tstok},
+https://www.vagrantup.com/[Vagrant] {tstok},
+
+.Conteneur
+https://www.docker.com/[Docker] {tstok},
+https://linuxcontainers.org/[Linux Containers],
+https://openvz.org/Main_Page[OpenVZ],

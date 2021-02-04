@@ -1,0 +1,36 @@
+= Aide mémoire sur les outils de développement
+Stéphane Lopes <stephane.lopes@uvsq.fr>
+v2021.02.1,
+:doctype: book
+:toc: left
+:toc-title: Sommaire
+:sectanchors:
+:sectlinks:
+:sectnums:
+:stem:
+:icons: font
+:source-highlighter: coderay
+
+:leveloffset: +1
+
+include::intro.adoc[]
+
+// Outils du système d'exploitation (shells, ...)
+include::os.adoc[]
+
+// Écrire du code et collaborer
+include::writing.adoc[]
+
+// Débogage, tests et profilage
+include::dynamic.adoc[]
+
+// Qualité du code et documentation
+include::static.adoc[]
+
+// Construction d’un projet
+include::build.adoc[]
+
+// Vers la livraison continue
+include::devops.adoc[]
+
+:leveloffset: -1

@@ -1,0 +1,54 @@
+= Qualité du code et documentation
+// https://fr.wikipedia.org/wiki/Analyse_statique_de_programmes
+
+* https://www.shellcheck.net/[ShellCheck] (linter)
+
+== Assurance qualité (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Software_quality"])
+.Style de codage
+https://github.com/google/styleguide[Google Style Guides] {tstok},
+
+.Style de codage par langage
+[%header]
+|===
+| Java | Python
+
+|
+| https://www.python.org/dev/peps/pep-0008/[PEP 8],
+http://pep8.org/[PEP 8 — the Style Guide for Python Code],
+
+|===
+
+.Outils de vérification des conventions par langage
+[%header]
+|===
+| Java | Python
+
+| http://checkstyle.sourceforge.net/[CheckStyle] {tstok}
+http://jcsc.sourceforge.net/[JCSC] {tst}
+| https://www.pylint.org/[Pylint]
+
+|===
+
+.Outils d'audit (statique) par langage
+[%header]
+|===
+| Java
+
+| http://findbugs.sourceforge.net/[FindBugs] {tstok},
+http://pmd.sourceforge.net[Pmd] {tst},
+http://www.sonarqube.org/[SonarQube]
+
+|===
+
+== Documentation (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Software_documentation"])
+http://www.doxygen.org[Doxygen] {tst},
+
+.Outils de documentation par langage
+[%header]
+|===
+| Java | Python
+
+| http://java.sun.com/j2se/javadoc/[JavaDoc] {tstok}
+| https://docs.python.org/3/library/pydoc.html[pydoc]
+
+|===

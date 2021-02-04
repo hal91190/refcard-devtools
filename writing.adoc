@@ -1,0 +1,45 @@
+= Écrire du code et collaborer
+
+== Éditeur de texte (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Text_editor"]) et IDE (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Integrated_development_environment"])
+https://www.vim.org/[Vim],
+https://code.visualstudio.com/[VS Code],
+http://en.wikipedia.org/wiki/Emacs[Emacs],
+http://notepad-plus.sourceforge.net[Notepad++],
+https://www.sublimetext.com/[Sublime Text],
+https://atom.io/[Atom],
+
+https://www.eclipse.org/[Eclipse],
+
+.Éditeurs de texte et IDE par langage
+[%header]
+|===
+| Java | Python
+
+| https://www.bluej.org/[BlueJ],
+https://www.jetbrains.com/idea/[IntelliJ IDEA]
+| https://pythonhosted.org/spyder/[Spyder],
+https://www.jetbrains.com/pycharm/[PyCharm],
+http://www.pydev.org/[PyDev],
+https://marketplace.visualstudio.com/items?itemName=donjayamanne.python[Python pour VS Code],
+https://microsoft.github.io/PTVS/[Python Tools for Visual Studio]
+
+|===
+
+== Forge logicielle (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Forge_(software)"])
+https://github.com/[GitHub],
+https://bitbucket.org/[Bitbucket],
+https://gitlab.com/[GitLab],
+https://sourceforge.net/[SourceForge],
+
+== Gestion des versions (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Version_control"])
+.Distribué
+http://git-scm.com/[Git],
+https://www.mercurial-scm.org/[Mercurial],
+
+.Client-serveur
+http://subversion.apache.org/[Subversion],
+http://www.nongnu.org/cvs/[CVS],
+
+.Mode local
+http://cssc.sourceforge.net/[SCCS],
+http://www.cs.purdue.edu/homes/trinkle/RCS/[RCS],

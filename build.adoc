@@ -1,0 +1,40 @@
+= Construction d’un projet
+// https://fr.wikipedia.org/wiki/Moteur_de_production
+
+== Implémentation et distribution
+.Implémentation et distribution par langage
+[%header]
+|===
+| Java | Python
+
+| http://openjdk.java.net/[OpenJdk],
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle Java SE],
+| https://fr.wikipedia.org/wiki/CPython[CPython],
+http://www.jython.org/[Jython],
+http://ironpython.net/[IronPython],
+http://pypy.org/[PyPy],
+https://www.python.org/downloads/[Distribution de référence],
+https://www.continuum.io/anaconda-overview[Anaconda],
+https://ipython.org/[IPython],
+https://jupyter.org/[Jupyter],
+
+|===
+
+== Automatisation du __build__ (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Build_automation"])
+https://gradle.org/[Gradle] {tstok},
+http://www.scons.org/[SCons],
+https://waf.io/[Waf],
+
+.Outils de build par langage
+[%header]
+|===
+| Java/Scala | C/C++ | Ruby
+
+| https://maven.apache.org/[Maven] {tstok},
+http://ant.apache.org[Ant] {tstok},
+http://www.scala-sbt.org/[sbt] {tst}
+| http://www.gnu.org/software/make[Make] {tstok},
+https://cmake.org/[CMake] {tst}
+| http://docs.seattlerb.org/rake/[Rake] {tst}
+
+|===

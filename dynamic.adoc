@@ -1,0 +1,63 @@
+= Débogage, tests et profilage
+// https://fr.wikipedia.org/wiki/Analyse_dynamique_de_programmes
+
+== Débogage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Debugging"]) et profilage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Profiling_(computer_programming)"])
+.Débogueur par langage
+[%header]
+|===
+| C/C++ | Python
+
+| http://www.gnu.org/software/gdb/gdb.html[GDB]/ http://www.gnu.org/software/ddd/[DDD] {tstok},
+http://valgrind.org/[Valgrind] {tstok},
+| https://docs.python.org/3/library/pdb.html[pdb]/
+https://github.com/gotcha/ipdb[ipdb]
+
+|===
+
+== Tests (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Software_testing"])
+* https://github.com/sstephenson/bats[Bats] (tests)
+
+.Frameworks de test unitaire (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Unit_testing"]) par langage
+[%header]
+|===
+| Java | Python
+
+| http://www.junit.org/[JUnit] {tstok},
+http://testng.org/[TestNG],
+| https://docs.python.org/3/library/unittest.html[unittest]
+
+|===
+
+.Frameworks de _doublure de test_ (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Test_double"]) par langage
+[%header]
+|===
+| Java
+
+| http://site.mockito.org/[Mockito] {tst},
+http://jmockit.org/index.html[JMockit],
+http://easymock.org/[EasyMock],
+https://github.com/jayway/powermock[PowerMock],
+
+|===
+
+.Autres frameworks de tests
+* Fonctionnel (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Functional_testing"]) : http://fit.c2.com/[Fit], http://fitnesse.org/[Fitnesse],
+* Non fonctionnel (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Non-functional_testing"]) : http://jakarta.apache.org/jmeter/[JMeter],
+
+.Couverture des tests (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Code_coverage"]) par langage
+[%header]
+|===
+| Java
+
+| http://cobertura.sourceforge.net/[Cobertura],
+http://emma.sourceforge.net[EMMA],
+http://www.atlassian.com/software/clover/[Clover],
+
+|===
+
+.Behaviour-Driven Development
+http://cukes.info/[Cucumber],
+http://spockframework.org/[Spock],
+http://jbehave.org/[JBehave],
+
+== Profilage

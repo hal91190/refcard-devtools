@@ -1,0 +1,39 @@
+= Au niveau du système d'exploitation
+Ce chapitre adresse les outils disponibles sur les systèmes d'exploitation et qui sont courament utilisés dans le contexte du développement logiciel.
+La plupart des références citées sont disponibles sous Linux ou parfois multi-plateformes.
+De plus, un environnement Linux peut être aisément créé à partir d'un autre système comme par exemple https://docs.microsoft.com/fr-fr/windows/wsl/[le sous-système Windows pour Linux] (WSL) pour Windows 10 ou https://support.google.com/chromebook/answer/9145439?hl=fr[Linux sur Chromebook].
+Il est a noté que Mac OS fait partie de la famille des systèmes d'exploitation Unix et permet donc, pour la plupart, d'exécuter directement les outils cités par la suite.
+
+== Shells
+// bash, zsh
+
+== Outils en ligne de commande
+=== Manipulation de fichiers
+* https://github.com/sharkdp/bat[bat] (https://fr.wikipedia.org/wiki/Cat_(Unix)[cat])
+* code-insiders
+* exa (ls)
+* fzf
+* fd (find)
+* rg (grep)
+* dust (du)
+* hyperfine (time)
+* tokei
+* procs (ps)
+* sd (sed)
+* btm (top/htop)
+
+=== Gestion de processus
+// htop
+
+=== Gestion de la mémoire
+// free
+
+== Outils réseaux
+// ssh, tmux/screen, byobu, filezilla
+
+== Références
+* https://zaiste.net/posts/shell-commands-rust/[Rewritten in Rust: Modern Alternatives of Command-Line Tools]
+* https://www.wezm.net/technical/2019/10/useful-command-line-tools/[An Illustrated Guide to Some Useful Command Line Tools]
+* https://bios-blog.com/handy-shell-tools/[Handy Shell Tools]
+* https://ivergara.github.io/Supercharging-shell.html[https://ivergara.github.io/Supercharging-shell.html]
+* https://missing.csail.mit.edu/2020/shell-tools/[Shell Tools and Scripting]

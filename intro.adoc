@@ -1,0 +1,7 @@
+= Introduction
+L'objectif de ce document est de présenter les familles d'outils et de techniques utilisées pour le développement de logiciels.
+Le but n'est par contre pas d'être exhausif au niveau des outils eux-mêmes mais plutôt de structurer leur présentation pour permettre de mettre en évidence leur utilité ainsi que les relations entre eux.
+Enfin, la plupart des références citées en exemple sont issues de l'écosystème Java mais, bien entendu, des logiciels similaires existent pour de nombreux autres langages.
+
+== Références
+* Outils de développement (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Programming_tool"])
