@@ -39,7 +39,8 @@ https://wiki.archlinux.org/index.php/Dotfiles[Dotfiles] (ArchWiki)
 * fzf (icon:github[link="https://github.com/junegunn/fzf"])
 * fd (icon:github[link="https://github.com/sharkdp/fd"]) / https://www.gnu.org/software/findutils/[find]
 * rg (icon:github[link="https://github.com/BurntSushi/ripgrep"]) / skim (icon:github[link="https://github.com/lotabout/skim"]) / https://www.gnu.org/software/grep/[grep]
-* dust (icon:github[link="https://github.com/bootandy/dust"]) / du (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Du_(Unix)"])
+* dust (icon:github[link="https://github.com/bootandy/dust"]) / https://dev.yorhel.nl/ncdu[ncdu] / du (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Du_(Unix)"])
+* duf (icon:github[link="https://github.com/muesli/duf"]) / df (icon:wikipedia-w[link="https://fr.wikipedia.org/wiki/Df_(Unix)"])
 * sd (icon:github[link="https://github.com/chmln/sd"]) / sed (icon:wikipedia-w[link="https://fr.wikipedia.org/wiki/Stream_Editor"]) / awk (icon:wikipedia-w[link="https://fr.wikipedia.org/wiki/Awk"])
 * tokei (icon:github[link="https://github.com/XAMPPRocky/tokei"])
 
