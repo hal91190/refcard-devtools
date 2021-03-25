@@ -1,18 +1,54 @@
 = Débogage, tests et profilage
 // https://fr.wikipedia.org/wiki/Analyse_dynamique_de_programmes
 
-== Débogage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Debugging"]) et profilage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Profiling_(computer_programming)"])
-.Débogueur par langage
-[%header]
-|===
-| C/C++ | Python
+== Débogage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Debugging"])
+=== Bogue, débogage et débogueur
+* Un _bogue_ (_bug_) est un défaut dans un programme qui l'empêche de fonctionner correctement
+* Le _débogage_ (_debugging_) est une activité ayant pour objectif de localiser les bogues dans un programme
+* Le débogage est basé sur la _confirmation_
+** c'est un processus destiné à confirmer les choses que l'on croit vrai jusqu'à en trouver une qui ne l'est pas
+* Un _débogueur_ (_debugger_) est un outil fournissant une aide pour le débogage
 
-| http://www.gnu.org/software/gdb/gdb.html[GDB]/ http://www.gnu.org/software/ddd/[DDD] {tstok},
-http://valgrind.org/[Valgrind] {tstok},
-| https://docs.python.org/3/library/pdb.html[pdb]/
-https://github.com/gotcha/ipdb[ipdb]
+=== Pourquoi utiliser un débogueur ?
+* *Pour gagner du temps !*
+* Les alternatives sont moins efficaces (mais parfois utiles tout de même)
+** utiliser des affichages (`printf`, …)
+*** perte de temps
+*** beaucoup d'éditions/compilations pour ajouter/enlever les affichages
+*** moins informatif
+** utiliser une bibliothèque de journalisation (_logging_) (icon:wikipedia-w[link="https://fr.wikipedia.org/wiki/Historique_(informatique)"])
+*** plus pratique que les affichages
+*** moins informatif que le débogueur
 
-|===
+=== Fonctionnalités d'un débogueur
+* Exécution contrôlée du programme
+** pas à pas sommaire (sans entrer dans les fonctions)
+** pas à pas détaillé
+** retour en arrière (plus rare)
+* Pose de _points d'arrêt_ (_breakpoints_)
+** repère sur une instruction signalant au débogueur qu'il doit faire un pause dans l'exécution lorsqu'il arrive à cette instruction
+** peut être également associé à une condition
+** un _point d'observation_ (_watchpoint_) stoppe le programme lorsque l'état d'une expression change
+** un _catchpoint_ fait de même quand un événement se déclenche
+* Visualisation de l'état du programme
+** variables, pile d'appel, …
+** certains débogueurs  permettent l'affichage de structure de données complexes
+* Modification de l'état du programme
+* Débogage à distance
+
+=== Processus de débogage
+. Tenter de reproduire le bogue
+. Simplifier les entrées du programme
+. Exécuter le programme sous le contrôle du débogueur
+. Se positionner à l'endroit de l'erreur signalée ou au milieu du programme (pose d'un breakpoint) si aucune erreur n'est signalée
+. Examiner le contexte pour confirmer que les variables possèdent les valeurs attendues
+. Déterminer la position suivante à étudier et retourner en 5
+
+IMPORTANT: nécessite de compiler le programme avec les informations de débogage (option `-g` de `javac` ou de `gcc`)
+
+.Quelques débogueurs
+* http://www.gnu.org/software/gdb/gdb.html[GDB]/ http://www.gnu.org/software/ddd/[DDD]
+* https://docs.python.org/3/library/pdb.html[pdb]/ https://github.com/gotcha/ipdb[ipdb]
 
 == Tests (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Software_testing"])
 * https://github.com/sstephenson/bats[Bats] (tests)
@@ -60,4 +96,5 @@ http://cukes.info/[Cucumber],
 http://spockframework.org/[Spock],
 http://jbehave.org/[JBehave],
 
-== Profilage
+== Profilage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Profiling_(computer_programming)"])
+http://valgrind.org/[Valgrind]
