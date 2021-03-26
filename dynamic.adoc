@@ -51,36 +51,122 @@ IMPORTANT: nécessite de compiler le programme avec les informations de débogag
 * https://docs.python.org/3/library/pdb.html[pdb]/ https://github.com/gotcha/ipdb[ipdb]
 
 == Tests (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Software_testing"])
-* https://github.com/sstephenson/bats[Bats] (tests)
+=== Définition et intérêt
+* Les _tests_ visent à mettre en évidence des défauts de l'élément testé
+* L'objectif final est bien sûr de réduire le nombre de bogues présents dans un programme
+* Un test est un ensemble de _cas à tester_ (conditions initiales, entrées, observations attendues)
 
-.Frameworks de test unitaire (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Unit_testing"]) par langage
+[WARNING]
+====
+*Un test ne permet pas de prouver l'absence de bogue (≠ des méthodes formelles).*
+
+* Il est impossible d'exécuter des tests exhaustifs dans la plupart des cas
+* Les tests sont toutefois une aide précieuse pour améliorer la qualité du logiciel
+====
+
+=== Quelques types de tests
+* Un test _boite blanche_ (_white box_) s'appuie sur une connaissance de la structure interne de l'élément à tester
+* Un test _boite noire_ (_black box_) s'appuie sur les spécifications de l'élément
+* Un test de _non régression_ vérifie que le système ne se dégrade pas lors de ses évolutions
+* Un test _fonctionnel_ s'assure que les résultats attendus sont bien obtenus
+* Un test _non fonctionnel_ analyse les propriétés non fonctionnelles d'un système
+** test _des performances_ pour vérifier l'efficacité du système
+** test _de sécurité_ pour s'assurer du respect des règles de confidentialité
+
+=== Granularité de tests
+[horizontal]
+Unitaire:: Les tests unitaires vérifient la conformité des éléments de base d'un programme (fonctions, classes, …) et sont en général réalisés par le développeur.
+Intégration:: Les tests d'intégration vérifient la cohérence des différents modules et la bonne communication entre eux.
+Système:: Les tests systèmes concernent l'ensemble du projet et son intégration dans son environnement.
+Recette:: Les tests de recette (ou d'acceptation) confirment la conformité du système avec les besoins.
+
+=== Intégration au processus de développement
+* Généralement (cycle de développement en V par exemple), les tests sont réalisés par un groupe de testeurs après la réalisation des fonctionnalités
+* Une pratique encouragée par les méthodes Agiles et XP consiste à débuter le processus par les tests (_Développement dirigé par les tests_)
+
+.Quelques outils pour les tests
+[horizontal]
+Unitaires et d'intégration:: cf. ci-dessous.
+Fonctionnel (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Functional_testing"]):: http://fit.c2.com/[Fit], http://fitnesse.org/[FitNesse].
+Non fonctionnels (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Non-functional_testing"]):: http://jakarta.apache.org/jmeter/[Apache JMeter], http://www.clarkware.com/software/JUnitPerf.html[JUnitPerf].
+
+=== Tests unitaires
+==== Définition et objectifs
+* Un _test unitaire_ (_unit test_) vise à augmenter la confiance du programmeur dans des portions du code source
+* Une _unité_ fait référence à la plus petite partie testable de l'application (fonction, méthode)
+* Le but des tests unitaires est d'isoler chaque partie du programme pour la tester indépendamment
+** isoler les différents éléments nécessite souvent d'avoir recours à du code de substitution (_stub_, _fake_ ou _mock object_)
+* Ces tests peuvent être réalisés à la main (affichages et vérification visuel, débogueur) ou avec un framework spécialisé par exemple de type `xUnit`
+
+.Quelques frameworks de test unitaire (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Unit_testing"])
 [%header]
 |===
-| Java | Python
+| Java | Python | Bash
 
-| http://www.junit.org/[JUnit] {tstok},
+| http://www.junit.org/[JUnit],
 http://testng.org/[TestNG],
 | https://docs.python.org/3/library/unittest.html[unittest]
+| https://github.com/sstephenson/bats[Bats]
 
 |===
 
-.Frameworks de _doublure de test_ (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Test_double"]) par langage
+==== Principe
+* Pour chaque unité, on écrit une ou plusieurs méthodes de test
+** un outil de gestion est nécessaire vu le nombre de tests
+* Une possibilité intéressante est d'écrire le test avant la méthode
+** précise d'abord ce que doit faire la méthode
+* L'ensemble des tests peut ensuite être répété autant que nécessaire
+** l'exécution des tests après chaque modification permet de vérifier la non régression
+
+==== Caractéristiques des tests unitaires
+* Petits (analyse d'un point précis) et rapides (exécutés souvent)
+* Totalement automatisés
+* Toujours au niveau de l'unité
+* Indépendants les uns des autres (pas de contraintes d'ordre)
+* N'utilisent pas de ressources externes (SGBD, …)
+
+==== Doublure de tests
+* Un test unitaire se focalise sur un élément particulier
+* Ce dernier peut être dépendant d'autres éléments
+* Une _doublure de test_ permet de remplacer ces dépendances
+
+.Plusieurs types de doublure (cf. https://martinfowler.com/articles/mocksArentStubs.html[Mocks Aren't Stubs], Martin Fowler, 2007)
+[horizontal]
+Fantôme:: un objet _fantôme_ (_dummy_) sert juste à remplir des listes de paramètres
+Substitut:: un objet _substitut_ (_fake_) fournit une implémentation simplifiée
+Bouchon:: un objet _bouchon_ (_stub_) retourne des réponses prédéfinies spécifiques aux tests
+Simulacre:: un objet _simulacre_ (_mock_) sont préprogrammés par des attentes, i.e. une spécification du comportement attendu
+
+.Quelques frameworks de _doublure de test_ (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Test_double"])
 [%header]
 |===
 | Java
 
-| http://site.mockito.org/[Mockito] {tst},
+| http://site.mockito.org/[Mockito],
 http://jmockit.org/index.html[JMockit],
 http://easymock.org/[EasyMock],
 https://github.com/jayway/powermock[PowerMock],
 
 |===
 
-.Autres frameworks de tests
-* Fonctionnel (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Functional_testing"]) : http://fit.c2.com/[Fit], http://fitnesse.org/[Fitnesse],
-* Non fonctionnel (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Non-functional_testing"]) : http://jakarta.apache.org/jmeter/[JMeter],
+=== Couverture de code
+* L'objectif est de vérifier que les tests unitaires couvrent bien l'ensemble du code écrit
+* La _couverture de code_ (_code coverage_) est un outil de mesure de la qualité des tests effectués
+* Le degré de couverture est mesuré par des indices statistiques
+* Les portions de codes non testées sont mises en évidence
 
-.Couverture des tests (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Code_coverage"]) par langage
+==== Quelques métriques
+* Le _Statement Coverage_ (ou _Line Coverage_) mesure le degré d'exécution de chaque ligne
+** simple mais ignore un certain nombre d'erreurs simples (ne prend pas en compte la logique du programme)
+* Le _Condition Coverage_ indique si toutes les conditions ont été évaluées
+** les conditions doivent être évaluées à vrai et à faux pour obtenir un taux de 100\%
+** aide à résoudre les problèmes de la mesure précédente
+* Le _Path coverage_ examine si chaque chemin a été parcouru
+* Le _Function Coverage_ vérifie si chaque fonction a été appelée
+
+IMPORTANT: *Un score de 100% ne garantit pas la correction du programme. Ce n'est même pas un objectif !*
+	
+.Couverture des tests (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Code_coverage"])
 [%header]
 |===
 | Java
@@ -91,7 +177,29 @@ http://www.atlassian.com/software/clover/[Clover],
 
 |===
 
-.Behaviour-Driven Development
+=== Développement piloté par les tests
+* Le _développement piloté par les tests_ (_Test Driven Development_ ou _TDD_) est une méthode de développement mettant l'accent sur les tests unitaires
+* Cette méthode préconise d'écrire les tests avant le code
+** _Only ever write code to fix a failing test_
+* Cette approche permet de spécifier ce que l'on attend du système avant de le réaliser
+* Elle est basée sur les tests et le _\href{http://www.refactoring.com/_{refactoring}}
+* Le refactoring consiste à améliorer la conception du programme sans en changer le comportement (les fonctionnalités)
+* Le TDD n'est pas limité aux tests unitaires mais s'applique aussi aux tests de recette (_Acceptance TDD_)
+
+==== Cycle de développement
+* Le TDD s'appuie sur de courtes itérations
+* Chaque itération possède cinq étapes
+.. Écrire un test
+.. Exécuter les tests et vérifier que le nouveau échoue
+.. Écrire juste le code nécessaire pour faire passer le test
+.. Réexécuter les tests et vérifier que tous les tests passent
+.. Corriger la conception du système (_refactoring_)
+* La phase de refactoring s'applique aussi bien au code de l'application qu'au code des tests
+
+==== Programmation pilotée par le comportement (icon:wikipedia-w[link="https://fr.wikipedia.org/wiki/Programmation_pilot%C3%A9e_par_le_comportement"])
+* Les pratiques de TDD peuvent être étendues vers la Programmation pilotée par le comportement (_Behaviour-Driven Development_ ou _BDD_)
+
+.Quelques frameworks de BDD
 http://cukes.info/[Cucumber],
 http://spockframework.org/[Spock],
 http://jbehave.org/[JBehave],
