@@ -204,5 +204,49 @@ http://cukes.info/[Cucumber],
 http://spockframework.org/[Spock],
 http://jbehave.org/[JBehave],
 
-== Profilage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Profiling_(computer_programming)"])
-http://valgrind.org/[Valgrind]
+== Optimisation et profilage (icon:wikipedia-w[link="https://en.wikipedia.org/wiki/Profiling_(computer_programming)"])
+* L'_optimisation_ est la pratique qui consiste à modifier un système pour qu'il fonctionne plus efficacement
+** par exemple plus rapidement ou en consommant moins de ressources
+** L'optimisation est souvent un compromis entre différents facteurs
+* L'_analyse dynamique_ (_profiling_) d'un programme a pour objectif de collecter des informations sur le comportement d'une application pendant son exécution
+** Les éléments à surveiller sont l'utilisation des CPU, l'utilisation de la mémoire, les _threads_, …
+
+WARNING: Ce type d'analyse a un impact sur le comportement de l'application.
+
+=== Mise en œuvre
+* Un outil d'analyse dynamique permet de collecter et de présenter les informations résultant de l'analyse de l'exécution
+* Utilisé pour l'analyse de performances, un tel outil permet de localiser les _points chauds_ (_hot spots_) du programme
+** point chaud: portion de code longue à exécuter
+** rapports sur les fonctions appelées, temps passé dans chaque fonction, …
+	
+.Quelques outils
+http://sourceware.org/binutils/docs-2.18/gprof[gprof] (GNU Profiler), http://valgrind.org/[Valgrind], https://visualvm.github.io/index.html[VisualVM].
+
+=== A propos de l'optimisation prématurée
+WARNING: La phase d'optimisation ne doit intervenir qu'une fois que le programme fonctionne et répond aux spécifications fonctionnelles.
+
+.Quelques citations
+* _More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason - including blind stupidity._, http://en.wikipedia.org/wiki/W.A._Wulf[W.A. Wulf]
+* _We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%._, http://en.wikipedia.org/wiki/Donald_Knuth[Donald Knuth]
+* _Bottlenecks occur in surprising places, so don't try to second guess and put in a speed hack until you have proven that's where the bottleneck is._, http://en.wikipedia.org/wiki/Rob_Pike[Rob Pike]
+* _The First Rule of Program Optimization: Don't do it. The Second Rule of Program Optimization (for experts only!): Don't do it yet._, http://en.wikipedia.org/wiki/Michael_A._Jackson[Michael A. Jackson]
+
+=== Optimisation à différents niveaux
+* Conception
+** algorithmes, architecture de l'application, …
+* Code source
+** utilisation d'idiomes adaptés au langage
+WARNING: attention de ne pas perturber les optimisations du compilateur
+* Compilateur
+** utiliser les optimisations fournies par le compilateur
+* Assembleur
+** spécifique à une plateforme
+* Exécution
+** compilateur _just in time_
+
+=== Marche à suivre pour l'optimisation
+. Choisir un paramètre à optimiser (temps CPU, occupation mémoire, …)
+. Localiser les portions de code les plus coûteuses vis à vis de ce paramètre
+** permet d'obtenir le meilleur rendement
+** règle des 80/20  (icon:wikipedia-w[link="https://fr.wikipedia.org/wiki/Principe_de_Pareto"])
+. Appliquer les optimisations puis *mesurer le résultat*
